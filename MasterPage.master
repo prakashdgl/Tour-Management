@@ -1,0 +1,68 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <title>Tour & Travel</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+       <div id="wrapper">
+<div id="header">
+      <img alt="Logo" src="Logo4.png" height="100" />
+         <h1>Go Holiday
+    <marquee behaviour="scroll" direction="right">LIVE THE TRIP!</marquee></h1>
+   
+</div>
+<div id="menu">
+<ul>
+<li><a href="selectpackage.aspx">Holiday Packages</a></li>
+<li><a href="#">Flight</a></li>
+<li><a href="#">Hotel</a></li>
+<li><a href="#">Bus</a></li>
+<li><a href="#">My Bookings</a></li>
+<li><a href="#">Trains</a></li>
+</ul>
+</div>
+<div id="content"></div>
+<div id="comment">
+<ul>
+<li><a href="#">Best Offers</a></li>
+<li><a href="#">Discount For College Students</a></li>
+<li><a href="#">Hotel Offers</a></li>
+</ul>
+</div>
+<div id="footer">
+<h3>contact us:<a href="#">yayavari@gmail.com</a></h3>
+</div>
+            
+            <nav>
+    <ul class="cf">
+        <li><a href="Default.aspx">HOME</a></li>
+        <li><a class="dropdown" href="#">ABC</a>
+            <ul>
+                <li><a href="#">Sub-menu Item 1</a></li>
+                <li><a href="#">Sub-menu Item 2</a></li>
+                <li><a href="#">Sub-menu Item 3</a></li>
+            </ul>
+            </li>
+        <li><a href="#">IMAGE GALLERY</a></li>
+        <li><a href="#">REGISTER</a></li>
+    </ul>
+</nav>
+                
+            </div>
+        </asp:ContentPlaceHolder>
+            </div>
+    </form>
+</body>
+</html>

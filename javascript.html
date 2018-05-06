@@ -1,0 +1,226 @@
+<html>
+	<head>
+		<script type="text/JavaScript">
+			function validation()
+			{
+				
+				var RE_UID = /^(\w)+$/;
+				var RE_PASS = /^(\w)+$/;
+				var RE_NAME = /^(\w)+$/;
+				var RE_CONTACTNO = /^\d{10,11}$/;
+				var RE_EMAIL = /^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/;
+				
+				
+				var u1=document.getElementById("uid").value;
+				if(u1=="")
+				{
+					alert("user id cannot be blank");
+					return false;
+				}
+				if (!RE_UID.test(u1)) 
+				  {
+				   alert("user id has to be alphanumeric");
+					return false;
+				
+				  }
+				 
+				var pw=document.getElementById("pwd").value;
+				if(pw=="")
+				{
+					alert("password cannot be blank");
+					return false;
+				}
+				if (!RE_PASS.test(pw)) 
+				  {
+				   alert("password has to be alphanumeric");
+					return false;
+				
+				  }
+				
+				var pw2=document.getElementById("password2").value;
+				if(pw2=="")
+				{
+					alert(" Verify password cannot be blank");
+					return false;
+				}
+				var name=document.getElementById("name").value;
+				if(name=="")
+				{
+					alert("Name cannot be blank");
+					return false;
+				}
+				if (!RE_NAME.test(name)) 
+				  {
+				   alert("Name has to be alphanumeric");
+					return false;
+				
+				  }
+				
+				var contact=document.getElementById("contact").value;
+				if(contact=="")
+				{
+					alert("Contact cannot be blank");
+					return false;
+				}
+				if (!RE_CONTACTNO.test(contact)) 
+				  {
+				   alert("Contact has to be numeric and more than 10 digits");
+					return false;
+				
+				  }
+				
+				var email=document.getElementById("email").value;
+				if(email=="")
+				{
+					alert("Email cannot be blank");
+					return false;
+				}
+				if (!RE_EMAIL.test(email)) 
+				  {
+				   alert("Email should have proper email validation");
+					return false;
+				
+				  }
+				
+				var address=document.getElementById("address").value;
+				if(address=="")
+				{
+					alert("Address cannot be blank");
+					return false;
+				}
+				
+				var radioSelected = false;
+					for (i = 0;  i < f1.gender.length;  i++)
+					{
+					if (f1.gender[i].checked)
+					radioSelected = true;
+					}
+					if (!radioSelected)
+					{
+					alert("Please select one of the \"Gender\" options.");
+					return (false);
+					}
+
+				if (f1.lastqual.selectedIndex <= 0)
+				{
+				alert("Please select a valid Last qualification.");
+				f1.lastqual.focus();
+				return (false);
+				}
+				var checkSelected = false;
+					for (i = 0;  i < f1.hobby.length;  i++)
+					{
+					if (f1.hobby[i].checked)
+					checkSelected = true;
+					}
+					if (!checkSelected)
+					{
+					alert("Please select one of the \"Hobbies\" options.");
+					return (false);
+					}
+
+
+			}
+		</script>
+		</head>
+	<body>
+		<form name="f1" action="abc.html" onSubmit="return validation()" method="post">
+		<table>
+			<tr>
+				<td>
+					user id
+				</td>
+				<td>
+					<input type="text" name="uid" id="uid">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Password
+				</td>
+				<td>
+					<input type="password" name="pwd" id="pwd">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Verify Password:</td>
+				<td>
+					<input type="password" size="20" maxlength="20" name="password2" id="password2"><br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Name:</td>
+				<td>
+					<input type="text" size="20" maxlength="20" name="name" id="name"><br>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					Contact No:</td>
+				<td>
+					<input type="text" size="20" maxlength="20" name="contact" id="contact"><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Email ID:</td>
+				<td>
+					<input type="text" size="20" maxlength="20" name="email" id="email"><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Address:</td>
+				<td>
+					<textarea rows="10" cols="40" name="address" id="address"></textarea><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Gender:</td>
+				<td>
+					<input type="radio" name="gender" value="male">Male
+					<input type="radio" name="gender" value="female">Female<br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Last Qualification:</td>
+				<td>
+					<select name="lastqual">
+					<option value="0">BCA</option>
+					<option value="1">MCA</option>
+					<option value="2">B.TECH</option>
+					<option value="3">B.SC(IT)</option>
+					<option value="3">M.SC(IT)</option>
+					<option value="4">BBA</option>
+					</select><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Hobbies:</td>
+				<td>
+					<input type="checkbox" name="hobby" value="games">Games
+					<input type="checkbox" name="hobby" value="music">Music
+					<input type="checkbox" name="hobby" value="programming">Programming
+					<input type="checkbox" name="hobby" value="cooking">Cooking<br>
+				</td>
+			</tr>
+			
+
+			<tr>
+				<td>
+				</td>
+				<td>
+					<input type="Submit" value ="login">
+				</td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>
